@@ -1,2 +1,2 @@
 # WeiXinOA
-Asp.net Core Razor Pages
+use Asp.net Core Razor Pages
