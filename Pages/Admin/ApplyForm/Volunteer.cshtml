@@ -1,0 +1,38 @@
+﻿@page "{handler?}"
+@model WeiXinOA.Pages.Admin.ApplyForm.VolunteerModel
+@{
+    //var photoUrl = "/admin/applyform/volunteer/DownloadIdPhoto";
+    //var docxUrl = "/admin/applyform/volunteer/DownloadDocx";
+}
+
+<div class="layui-row">
+    <h3>义工申请表</h3>
+    <hr class="layui-bg-green" />
+</div>
+
+
+<!--layui_table1-->
+<div class="layui-row">
+    <table class="layui-hide" id="table1" lay-filter="table1"></table>
+</div>
+
+
+@section Scripts{
+    <!--表格行操作模板-->
+    @*<script type="text/html" id="caoZuoTpl">
+            <form id="downloadForm" method="post" class="layui-inline">
+                <button type="button" class="layui-btn layui-btn-xs" value="{{d.id}}" onclick="DownloadDocx(this,@docxUrl)">文档</button>
+                <button type="button" class="layui-btn layui-btn-xs" value="{{d.id}}" onclick="DownloadPhoto(this,@photoUrl)">图片</button>
+                <input type="hidden" id="downloadId" name="downloadId" />
+            </form>
+        </script>*@
+    <script type="text/html" id="caoZuoTpl">
+        <a class="layui-btn layui-btn-xs" href="/Admin/ApplyForm/DetailVolunteer?id={{d.id}}">详细</a>
+    </script>
+
+    <!-- layui table -->
+    <script>
+        AdminVolunteerTable();
+    </script>
+
+}   <!--Scripts section 结尾-->

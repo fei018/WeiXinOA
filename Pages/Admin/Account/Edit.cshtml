@@ -1,0 +1,86 @@
+﻿@page
+@model WeiXinOA.Pages.Admin.Account.EditModel
+@{
+}
+
+<div asp-validation-summary="All" class="layui-bg-red"></div>
+
+<fieldset class="layui-elem-field layui-field-box">
+    <legend>编辑登录账号角色</legend>
+
+    <form class="layui-form" method="post" asp-page-handler="EditUserRole">
+        <input type="hidden" asp-for="EditUser.Id" />
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">账号名</label>
+            <div class="layui-input-inline">
+                <input type="text" readonly asp-for="EditUser.LoginName" lay-verify="required" lay-reqtext="用户名不能为空" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">管理角色</label>
+            <div class="layui-input-inline">
+                <select asp-for="EditUser.RoleName">
+                    <option value="@LoginUserRole.User">@LoginUserRole.User</option>
+                    <option value="@LoginUserRole.PowerUser">@LoginUserRole.PowerUser</option>
+                    <option value="@LoginUserRole.Administrator">@LoginUserRole.Administrator</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="submit" class="layui-btn" lay-submit="">更改角色</button>               
+            </div>
+        </div>
+    </form>
+</fieldset>
+
+
+<fieldset class="layui-elem-field layui-field-box">
+    <legend>更改登录账号密码</legend>
+
+    <form class="layui-form" method="post" asp-page-handler="EditUserPassword">
+        <input type="hidden" asp-for="EditUser.Id" />
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline">
+                <input type="password" asp-for="EditUser.Password" lay-verify="required" lay-reqtext="密码不能为空" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="submit" class="layui-btn" lay-submit="">更改密码</button>              
+            </div>
+        </div>
+    </form>
+</fieldset>
+
+
+<fieldset class="layui-elem-field layui-field-box">
+    <legend>删除登录账号</legend>
+
+    <form class="layui-form" method="post" asp-page-handler="DeleteUser">
+        <input type="hidden" asp-for="EditUser.Id" />
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="submit" class="layui-btn" onclick="return DeleteUser()">删除账号</button>
+            </div>
+        </div>
+    </form>
+</fieldset>
+
+
+@section Scripts{
+    <script>
+        
+
+        function DeleteUser() {
+            return confirm("确定删除账号?");
+        }
+    </script>
+}

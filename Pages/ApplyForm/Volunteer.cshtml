@@ -1,0 +1,268 @@
+﻿@page
+@model WeiXinOA.Pages.ApplyForm.VolunteerModel
+@{
+    ViewBag.Title = "义工申请表";
+}
+
+
+<div>
+    <form class="layui-form" method="post" enctype="multipart/form-data" onsubmit="SubmitLoading()">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend><span style="font-size:x-large">义工申请表</span></legend>
+        </fieldset>
+
+        <blockquote class="layui-elem-quote">
+            提醒：义工，紧急联系人资料 须填写完整。
+        </blockquote>
+
+        <div asp-validation-summary="ModelOnly" class="layui-bg-red"></div>
+        <div class="layui-tab layui-tab-brief">
+            <!-- tab 标头-->
+            <ul class="layui-tab-title ">
+                <li class="layui-this">义工资料</li>
+                <li>紧急联系人</li>
+            </ul>
+            <!-- tab 标头结束-->
+
+            <div class="layui-tab-content">
+                <!--义工资料-->
+                <div class="layui-tab-item layui-show">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.Name"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Volunteer.Name" class="layui-input" lay-verify="required" lay-reqtext="义工资料必填项">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.Sex"></label>
+                        <div class="layui-input-block">
+                            <input type="radio" value="男" title="男" checked="" asp-for="Volunteer.Sex">
+                            <input type="radio" value="女" title="女" asp-for="Volunteer.Sex">
+                        </div>
+                    </div>
+
+                    @*<div class="layui-form-item">
+                            <label class="layui-form-label" asp-for="Volunteer.Age"></label>
+                            <div class="layui-input-block">
+                                <input type="text" asp-for="Volunteer.Age" class="layui-input" lay-verify="required" lay-reqtext="义工资料必填项">
+                            </div>
+                        </div>*@
+
+                    @*<div class="layui-form-item">
+                            <label class="layui-form-label" asp-for="Volunteer.BirthDate"></label>
+                            <div class="layui-input-block">
+                                <input type="text" id="date1" asp-for="Volunteer.BirthDate" placeholder="yyyy-MM-dd" class="layui-input" lay-verify="date" lay-reqtext="义工资料必填项">
+                            </div>
+                        </div>*@
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.Phone"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Volunteer.Phone" class="layui-input" lay-verify="required|phone" lay-reqtext="义工资料必填项">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.IdNumber"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Volunteer.IdNumber" class="layui-input" lay-verify="identity" lay-reqtext="义工资料必填项">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.MinZu"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Volunteer.MinZu" class="layui-input" lay-verify="required" lay-reqtext="义工资料必填项">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.Marital"></label>
+                        <div class="layui-input-block">
+                            <input type="radio" value="未婚" title="未婚" checked="" asp-for="Volunteer.Marital">
+                            <input type="radio" value="已婚" title="已婚" asp-for="Volunteer.Marital">
+                            <input type="radio" value="离异" title="离异" asp-for="Volunteer.Marital">
+                            <input type="radio" value="丧偶" title="丧偶" asp-for="Volunteer.Marital">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.PoliticalStatus"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Volunteer.PoliticalStatus" class="layui-input" lay-verify="required" lay-reqtext="义工资料必填项">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.JiGuan"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Volunteer.JiGuan" class="layui-input" lay-verify="required" lay-reqtext="义工资料必填项">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.Education"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Volunteer.Education" class="layui-input" lay-verify="required" lay-reqtext="义工资料必填项">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.ProfessinalAbility"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Volunteer.ProfessinalAbility" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.GraduateInstitutions"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Volunteer.GraduateInstitutions" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.HealthStatus"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Volunteer.HealthStatus" class="layui-input" lay-verify="required" lay-reqtext="义工资料必填项">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.WorkUnit"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Volunteer.WorkUnit" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.ProfessionStatus"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Volunteer.ProfessionStatus" class="layui-input" lay-verify="required" lay-reqtext="义工资料必填项">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.HuJiAddress"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Volunteer.HuJiAddress" class="layui-input" lay-verify="required" lay-reqtext="义工资料必填项">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.HomeAddress"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Volunteer.HomeAddress" class="layui-input" lay-verify="required" lay-reqtext="义工资料必填项">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label" asp-for="Volunteer.WorkHistory"></label>
+                        <div class="layui-input-block">
+                            <textarea type="text" asp-for="Volunteer.WorkHistory" class="layui-textarea" lay-verify="required" lay-reqtext="义工资料必填项"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Volunteer.ServiceTerm"></label>
+                        <div class="layui-input-block">
+                            <input type="radio" value="长期" title="长期" checked="" asp-for="Volunteer.ServiceTerm">
+                            <input type="radio" value="短期" title="短期" asp-for="Volunteer.ServiceTerm">
+                            <input type="radio" value="临时" title="临时" asp-for="Volunteer.ServiceTerm">
+                        </div>
+                    </div>
+
+
+                    <!--身份证正面照上传-->
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>上传义工身份证正面图</legend>
+                    </fieldset>
+                    <div class="layui-form-item">
+                        <input type="file" asp-for="IdPhoto" accept="image/*" lay-verify="required" lay-reqtext="身份证图片未选" onchange="CheckSizeMax4M(this)">
+                    </div>
+                </div>
+                <!--义工资料结束-->
+                <!---->
+                <!---->
+                <!--紧急联系人-->
+                <div class="layui-tab-item">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Family.Name"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Family.Name" class="layui-input" lay-verify="required" lay-reqtext="紧急联系人必填项">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Family.Sex"></label>
+                        <div class="layui-input-block">
+                            <input type="radio" value="男" title="男" checked="" asp-for="Family.Sex">
+                            <input type="radio" value="女" title="女" asp-for="Family.Sex">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Family.Age"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Family.Age" class="layui-input" lay-verify="required" lay-reqtext="紧急联系人必填项">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Family.Relationship"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Family.Relationship" class="layui-input" lay-verify="required" lay-reqtext="紧急联系人必填项">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Family.Phone"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Family.Phone" class="layui-input" lay-verify="required|phone" lay-reqtext="紧急联系人必填项">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" asp-for="Family.HomeAddress"></label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Family.HomeAddress" class="layui-input" lay-verify="required" lay-reqtext="紧急联系人必填项">
+                        </div>
+                    </div>
+                </div>
+                <!--紧急联系人结束-->
+            </div>
+        </div>
+
+        <hr class="layui-bg-green" />
+        <!--申明-->
+        <blockquote class="layui-elem-quote">
+            申明：申请人自愿到“安福怀老养老院”做志愿者，提供无偿服务，承诺并保证认真履行志愿者义务，严格遵守院规院纪，服从院方安排。
+        </blockquote>
+
+        <!--提交按钮-->
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="submit" class="layui-btn" lay-submit="">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">清除</button>
+            </div>
+        </div>
+
+    </form>
+
+    <!-- submit loading-->
+    <div class="submit_loading" style="display:none">
+        <div class="loading_show">
+            <img src="~/anfu/images/loading.gif" />
+            <p class="loading_context">正在提交，请稍后。。。</p>
+        </div>
+    </div>
+
+</div>
+
+
+@section Scripts{
+    <script>
+        ApplyFormVolunteer();
+    </script>
+}

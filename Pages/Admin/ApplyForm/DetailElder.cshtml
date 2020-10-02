@@ -1,0 +1,79 @@
+﻿@page
+@model WeiXinOA.Pages.Admin.ApplyForm.DetailElderModel
+@{
+}
+
+<table class="layui-table" lay-even lay-skin="nob">
+    <colgroup>
+        <col width="150" />
+        <col />
+    </colgroup>
+    <tbody>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Elder.AddTime)</td>
+            <td>@Model.Elder.AddTime</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Elder.Name)</td>
+            <td>@Model.Elder.Name</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Elder.Age)</td>
+            <td>@Model.Elder.Age</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Elder.BirthDate)</td>
+            <td>@Model.Elder.BirthDate</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Elder.Sex)</td>
+            <td>@Model.Elder.Sex</td>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Elder.IdNumber)</td>
+            <td>@Model.Elder.IdNumber</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Elder.Marital)</td>
+            <td>@Model.Elder.Marital</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Elder.Phone)</td>
+            <td>@Model.Elder.Phone</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Elder.JiGuan)</td>
+            <td>@Model.Elder.JiGuan</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Elder.HuJiAddress)</td>
+            <td>@Model.Elder.HuJiAddress</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Elder.HomeAddress)</td>
+            <td>@Model.Elder.HomeAddress</td>
+        </tr>
+    </tbody>
+</table>
+
+<div asp-validation-summary="All" class="layui-bg-red"></div>
+
+<form class="layui-form" method="post">
+    <input type="hidden" asp-for="Elder.Id" />
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" asp-page-handler="DownloadDocx">下载文档</button>
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" asp-page-handler="DownloadIdPhoto">下载图片</button>          
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="submit" class="layui-btn layui-btn-danger layui-btn-sm" asp-page-handler="DeleteElder" onclick="javascript:return confirm('确定删除? 不可恢复!')">删除信息</button>
+        </div>
+    </div>
+</form>
+
+<div class="layui-form-item">
+    <div class="layui-input-block">
+        <a class="layui-btn layui-btn-sm" asp-page="/admin/applyform/elder">返回</a>
+    </div>
+</div>

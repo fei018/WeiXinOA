@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeiXinOA", "WeiXinOA.csproj", "{8A210EEF-3E51-49A3-9FF2-787B9CC19011}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "..\ConsoleApp1\ConsoleApp1.csproj", "{18014BAA-40C4-456E-86F7-26159483AC31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A210EEF-3E51-49A3-9FF2-787B9CC19011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A210EEF-3E51-49A3-9FF2-787B9CC19011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A210EEF-3E51-49A3-9FF2-787B9CC19011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A210EEF-3E51-49A3-9FF2-787B9CC19011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18014BAA-40C4-456E-86F7-26159483AC31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18014BAA-40C4-456E-86F7-26159483AC31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18014BAA-40C4-456E-86F7-26159483AC31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18014BAA-40C4-456E-86F7-26159483AC31}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {492B3D48-A016-4374-8F36-7377123A3E88}
+	EndGlobalSection
+EndGlobal

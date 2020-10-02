@@ -1,0 +1,81 @@
+﻿@page
+@model WeiXinOA.Pages.Admin.ApplyForm.DetailVolunteerModel
+@{
+
+}
+
+<table class="layui-table" lay-even lay-skin="nob">
+    <colgroup>
+        <col width="150" />
+        <col />
+    </colgroup>
+    <tbody>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Volunteer.AddTime)</td>
+            <td>@Model.Volunteer.AddTime</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Volunteer.Name)</td>
+            <td>@Model.Volunteer.Name</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Volunteer.Age)</td>
+            <td>@Model.Volunteer.Age</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Volunteer.BirthDate)</td>
+            <td>@Model.Volunteer.BirthDate</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Volunteer.Sex)</td>
+            <td>@Model.Volunteer.Sex</td>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Volunteer.IdNumber)</td>
+            <td>@Model.Volunteer.IdNumber</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Volunteer.Marital)</td>
+            <td>@Model.Volunteer.Marital</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Volunteer.Phone)</td>
+            <td>@Model.Volunteer.Phone</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Volunteer.JiGuan)</td>
+            <td>@Model.Volunteer.JiGuan</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Volunteer.HuJiAddress)</td>
+            <td>@Model.Volunteer.HuJiAddress</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(M => M.Volunteer.HomeAddress)</td>
+            <td>@Model.Volunteer.HomeAddress</td>
+        </tr>
+    </tbody>
+</table>
+
+<div asp-validation-summary="ModelOnly" class="layui-bg-red"></div>
+
+<form class="layui-form" method="post">
+    <input type="hidden" asp-for="Volunteer.Id" />
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" asp-page-handler="DownloadDocx">下载文档</button>
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" asp-page-handler="DownloadIdPhoto">下载图片</button>           
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="submit" class="layui-btn layui-btn-danger layui-btn-sm" asp-page-handler="DeleteVolunteer" onclick="javascript:return confirm('确定删除? 不可恢复!')">删除信息</button>
+        </div>
+    </div>
+</form>
+
+
+<div class="layui-form-item">
+    <div class="layui-input-block">
+        <a class="layui-btn layui-btn-sm" asp-page="/admin/applyform/Volunteer">返回</a>
+    </div>
+</div>

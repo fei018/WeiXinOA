@@ -1,0 +1,43 @@
+﻿@page
+@model WeiXinOA.Pages.Admin.Account.CreateModel
+@{
+}
+
+<fieldset class="layui-elem-field layui-field-title">
+    <legend>新增登录账号</legend>
+</fieldset>
+
+<div asp-validation-summary="All" class="layui-bg-red"></div>
+
+<form class="layui-form" method="post">
+    <div class="layui-form-item">
+        <label class="layui-form-label">账号名</label>
+        <div class="layui-input-inline">
+            <input type="text" asp-for="NewUser.LoginName" lay-verify="required" lay-reqtext="用户名不能为空" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">密码</label>
+        <div class="layui-input-inline">
+            <input type="password" asp-for="NewUser.Password" lay-verify="required" lay-reqtext="密码不能为空" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">管理角色</label>
+        <div class="layui-input-inline">
+            <select asp-for="NewUser.RoleName">
+                <option value="@LoginUserRole.User" selected>@LoginUserRole.User</option>
+                <option value="@LoginUserRole.PowerUser">@LoginUserRole.PowerUser</option>
+                <option value="@LoginUserRole.Administrator">@LoginUserRole.Administrator</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="submit" class="layui-btn" lay-submit="">新增账号</button>
+        </div>
+    </div>
+</form>

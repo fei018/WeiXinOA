@@ -1,0 +1,18 @@
+﻿@page
+@model WeiXinOA.Pages.ErrorModel
+@{
+    Layout = null;
+}
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>错误信息</legend>
+</fieldset>
+
+<p style="color:red; font-size:20px;">
+    @Model.Error
+</p>
+
+<div style="margin-top:100px;">
+    <a class="layui-btn" href="/Admin/Index">返回首页</a>
+</div>
+

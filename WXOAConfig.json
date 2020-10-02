@@ -1,0 +1,11 @@
+{
+  "ConnectionStrings": {
+    "WeiXinOADb": "Data Source=192.168.2.20\\SQLEXPRESS;Initial Catalog=WeiXinOADbTest;User ID=sa;Password=sa111;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
+  },
+  "Mail": {
+    "From": "anfucarehome@qq.com",
+    "To": "anfucarehome@qq.com",
+    "Account": "2721451972",
+    "Password": "bvuyqyyppniydfci"
+  }
+}
